@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+                                                                         
+ 
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>recorder_instructions</title>
+   
+</head>
+ <body bgcolor="white">
+<div align="Center">
+<h1>Audio Transcriber/Recorder</h1>
+<div align="Left"><br>
+<i>Audio Transcriber/Recorder is a perl/Tk program designed to transfer audio
+       tapes and lp's to cd's. The target platform is gnu/linux with X windows
+and has not   been     tested on other systems</i>.<i><br>
+</i>
+<hr width="100%" size="2" align="Left"><i><br>
+                   Requirements:<br>
+</i>
+<ul>
+  <li>1.5gig harddisk space. A typical cd takes 650 meg of data. If you record 
+         a 60 minute cassette tape, or radio broadcast, or whatever to your 
+  harddrive       and then want to split it into individual tracks, you will 
+  need alot  of   hd  space.</li>
+  <li>A directory named /cdimage. Well this is not really a must but it's 
+         the default, so please make this directory some place in your directory 
+      tree   that has 1.5gig of space. I prefer a dedicated partition.<br>
+  </li>
+  <li>Perl - with the Tk800.xxx and Tk-Month packages. You'll probably need to go to www.cpan.org 
+         to get and install the Tk8 and Tk-Month packages or use MCPAN.</li>
+  <li>SOX - sound tools. Comes with most popular linux distros. Please use 
+         the SOX-12.17.1-t.tar that is distributed with this software because 
+    the    trim functions in earlier versions of sox do not work correctly. 
+  SOX  can   be obtained at <a href="http://www.sourceforge.net">http://www.sourceforge.net</a>
+. I have not tested other versions of SOX except the version supplied with
+this software.     </li>
+  <li>CDrecord. Comes with most linux distros. CDrecord can be obtained at
+      <a href="http://www.freshmeat.net">http://www.freshmeat.net</a>
+    <br>
+  </li>
+  <li>CDDA2WAV. Comes with most linux distros as a part of the cdrecord package. 
+         Cdrecord can be obtained at <a href="http://www.freshmeat.net">http://www.freshmeat.net</a>
+  </li>
+  <li>GNU/Linux. Of course! Is there any other <i>usable</i> OS? Also Xwindows
+and the window manager of your choice.<br>
+  </li>
+</ul>
+                 Sox, Cdrecord, cdda2wav must be in your path (i.e. in an 
+xterm    you   can   type  <i>sox</i> or <i>cdrecord</i> or <i>cdda2wav</i>
+  to invoke    the   respective    program). You must have the propper permissions
+set to use the various programs and files used by Audio Transcriber.<br>
+<hr width="100%" size="2" align="Left">
+<h3><i>Theory of operation:</i></h3>
+<h3></h3>
+<i>The purpose of Audio Transcriber/Recorder is to record large audio   
+      streams to a hard disk and then to split that file into smaller samples
+       suitable  for burning to cdr media and to burn a cdr, cdrw. </i><br>
+<br>
+                   An audio source connected to your sound card(/dev/dsp) 
+supplies     an  audio    stream that is recorded to your harddrive. This 
+audio source     could  be a  radio,  tape player, microphone or whatever. 
+This large sample     can then be  broken  down into smaller samples in a 
+suitable format to  be   burned onto recordable  cd media. I want a minimum 
+of effort on my part   to  do all of this. The basic  functionality is:<br>
+<ul>
+  <li>Record an audio stream to a harddisk.</li>
+  <li>Split a large audio file on the harddisk into small audio files.</li>
+  <li>Record audio file(s) onto cdr or cdrw disk</li>
+  <li>Maximum configurability if wanted, but defaults are correct 99.99 percent 
+         of the time.<br>
+  </li>
+</ul>
+                   Audio Transcriber/Recorder is basically a frontend to
+SOX,   CDRECORD,      CDDA2WAV.   It implements only a subset of these packages 
+ functionality   in it's   interface.  You may use more  of the functionality 
+ of these packages   from   within this  program by editing  their "control 
+ strings". <br>
+<br>
+                   The gui uses a tabbed/notebook style to keep the interface 
+  as  clean    as  possible. Bubble help pops up to clarify the interface 
+where   needed  when  the mouse hoovers over a control. In the screenshot 
+below bubblehelp  is popped up over the control string field.<br>
+<div align="Center"><img src="record_tab.jpeg" alt="Screen shot All tabs showing" width="433" height="393">
+<br>
+</div>
+<hr width="100%" size="2" align="Left"><br>
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+  <tbody>
+    <tr>
+      <td valign="Top">
+      <h3><i>General Operation guidelines:</i><br>
+      </h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="Top">
+      <ul>
+        <li>The program is best started from a terminal window ( /path-to/recorder.pl)
+  so that the output from the various programs it calls can be viewed. In
+other  words the programs output messages are sent to stdout. This is helpful
+because  you can see whats going on behind the gui interface. The messages
+in the term window are your only clue if there is an error in one of the
+progams, Sox, CDrecord, CDDA2WAV, that it starts(i.e. sox error /dev/dsp
+busy) - watch the term window!</li>
+        <li>A little practice with the trim buttons will be very helpfull.
+  You can make your trims as you record the original sample, then go to the
+  Trim/Play Sample tab and fine tune the trims if needed(that's what I do).</li>
+        <li>Turn off sound events in your window manager if you get alot
+of /dev/dsp busy errors. I have this problem on my RH7.1 gnome/enlightenment
+  system.</li>
+        <li>Uh - How do I get the sound into my sound card from my tape deck,
+  radio, whatever? You can buy a cable that plugs in to the audio-out on
+your   sound device(radio, tapedeck) and plugs into your soundcards audio-in
+plug,   I bought one at radio shack for about $5.00. The audio-out on my
+radio/tapedeck   is the headphones plug.&nbsp; Don't forget to bring up your
+audio mixer and  enable the audio-in (or line-in). If you can play a sound
+through your computer  speakers you can record it - plain and simple.<br>
+        </li>
+      </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+  <tbody>
+    <tr>
+      <td>
+      <h3><i>Sox setup tab:</i></h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="Top"><img src="sox_setup_tab.jpeg" alt="SOX setup tab" width="433" height="393" align="Left">
+         The <b>Sox Setup</b> tab contains fields for entering program wide 
+ defaults    for sound recording. In this tab you set the Save Name, Save 
+Path, sampling    rate and Record format. The fields in this tab are filled 
+in with default    values when the program is started. Also these values are
+used to construct    the recording control string and may be edited in the
+tabs where control   string is shown.<br>
+      <br>
+      <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+</div>
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+  <tbody>
+    <tr>
+      <td valign="Top">
+      <h3><i>Recording controls tab:<br>
+      There are three tabs under the Recording Controls:</i></h3>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="record_tab.jpeg" alt="Record tab" width="433" height="393" align="Left">
+         The <b>Record</b> tab has controls to record the incomming audio 
+stream    to   a  harddrive.  Once a stream is being recorded the trim buttons 
+become    activated.    The trim  buttons allow you to build a list of trim 
+start==length    pairs  that  you can  use to auto-magicaly trim out samples 
+when you are    done recording    by pressing  the "Auto-Magicaly Trim" button. 
+When you   automagicaly trim   a recording the  new samples are named as the
+original   recording with         <i>     0n</i>  appended (i.e.  testa01.cdr, 
+testa02.cdr   .... testa09.cdr, testa110.cdr).    Under this scheme  you can
+mark your  trim samples as you record the original. Just press the Trim Start
+button  to start the trim and press the Set Length button to set the trim
+length.  When the Set Length button is pressed the count list will be updated.
+  Then  when you finish recording press the auto-magicaly trim button and
+youre   done, the new samples will be added to the directory specified in
+the control  string and the original sample will be renamed with .BAK appended
+to the name.   </td>
+    </tr>
+    <tr>
+      <td valign="Top">
+      <div align="Center">
+      <div align="Center">
+      <div align="Left"><img height="393" width="433" alt="Trim/Play Sample tab" src="trim_play_tab.jpeg" align="Left">
+               The <b>Trim/Play Sample</b> tab has controls to specify the
+ original    recording name and the trimmed sample name.  When a original
+name is given    pressing the Play Original Sample button will  play the
+sample. Pressing   the Set Trim Start button sets the starting point  of
+the trimmed sample.   Pressing the Set Trim Length button sets the length
+ of the new trim. These   values may be entered directly in the edit boxes
+if  desired. Pressing the   Stop playing &amp; Execute Trim Command button
+records  the trim as specified   in the start and length fields with the
+name entered  in the Save Trim Name   field. Make sure to enter full path
+names in the name  fields.</div>
+      </div>
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td valign="Top"><img src="cd_copy_tab.jpeg" alt="CD Copy tab" width="433" height="393" align="Left">
+         The <b>Copy CD</b> tab has fields for entering CDDA2WAV parameters 
+ to  copy  a music cd. There is field at the bottom of the page that shows 
+ what  the assembled parameters look like that will be passed to the CDDA2WAV 
+ program.   You update this field by pressing the Refresh copystring button. 
+ The Refresh   copystring button assembles the information you have entered 
+ in the above   fields. The control string may be edited directly if needed. 
+ All of the entry  fields in this tab have balloon help popups. The Rip Tracks 
+ NOW button copys  the cd according to the parameters that are shown in the 
+ control string field.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<div align="Left">
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+  <tbody>
+    <tr>
+      <td valign="Top">
+      <h3><i>CDRecord Setup tab:</i></h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="Top"><img src="cdrecord_setup_tab.jpeg" alt="CDRecord setup tab" width="433" height="393" align="Left">
+       The cdrecord setup tab has fields to specify the basic parameters
+for   your  cd burner.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+</div>
+<div>
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+  <tbody>
+    <tr>
+      <td valign="Top">
+      <h3><i>Burn CD tab:</i><br>
+      </h3>
+      </td>
+    </tr>
+    <tr>
+      <td valign="Top"><img src="burncd_tab.jpeg" alt="Burn CD tab" width="433" height="393" align="Left">
+       The <b>Burn CD</b> tab contains the controls to burn a cd or blank 
+a  cdrw.   There is a simple clock at the top of the tab to give a reference 
+ to the  amount of time elapsed(kinda). Enter, in the File string to Burn 
+field, the  name of the file you want to burn to cd. The file name should 
+be the full  pathname of the file, i.e. /cdimage/testa.cdr or /cdimage/*.cdr 
+(which will  write all files in the directory ending with .cdr). You should 
+enter any other nesessary parameters in the File string to Burn field, i.e. 
+-pad -audio /cdimage/testa01.cdr /cdimage/testa02.cdr /cdimage/testa03.cdr 
+.... /cdimage/test110.cdr. When you have your file string to burn field filled 
+ in press the Burn CD NOW button to burn the cd media. Please read the cdrecord 
+ man page for full understanding of the parameters that may be entered in 
+the File string to Burn field.<br>
+      <br>
+       At the bottom of the screen there is a Blank RW Disk button. pressing
+  this  button will completely erase a cdrw disk.<br>
+      <br>
+    If you use the /*.cdr type of format in your File to Burn field don't 
+forget  to rename the original sample name to something like 'testa.cdr.bak' 
+so that  you don't try to burn all those trimmed samples and the original 
+sample, unless thats what you want to do.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div>
+<br>
+<table width='100%' border='1'>
+ <tbody>
+ <tr>
+  <td align='left'><h3><i>Context Help</i></h3>
+  </td>
+ </tr>
+  <tr>
+   <td valign="Top">
+    <img src="help_splash.jpeg" alt="Help window screen shot" align="left">
+Context sensitive help is available for any tab that is raised. Show the help for the raised tab by selecting Help for Context off of the Help menu.
+    </td>
+   </tr>
+   <tr>
+    <td valign="Top">
+    <img src="help_index.jpeg" alt="Help index displayed" align="left">
+   </td>
+  </tr>
+ </tbody>
+</table>
+</div>
+<br>
+<div>
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+  <tbody>
+ <tr>
+  <td><h3><i>Timer dialog</i></h3></td>
+ </tr>
+ <tr>
+    <td valign="Top">
+    <img src="Timer_dialog.jpeg" alt="Timer dialog displayed" align="left">
+    <b>Timer Dialog</b><br>
+The timer dialog is a compound widget for starting and stopping a proccess at a specified time. Timer has controls for setting the start and end time as well as start NOW and Stop NOW buttons. The parameters of the process to start may be edited in the control string field. Balloon help pops up over the various items when the mouse hoovers for a few seconds over the relevant item.<br>
+The Timer dialog is opened by selecting Timer record from the File menu. Any number of Time dialogs may be started. You may choose the Start NOW button and enter End timer Settings. You can press the Stop NOW button to stop the process immediately. You can specify both the Start Timer Settings and the End Timer Settings. When the Timer window is closed any process started from it is also closed.
+   </td>
+  </tr>
+ </tbody>
+</table>
+</div>
+<div align=center>
+<a href="mailto:massey@stlouis-shopper.com">
+Contact Jim by email</a>
+</body>
+</html>

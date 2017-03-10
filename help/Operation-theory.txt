@@ -1,0 +1,9 @@
+ Theory of operation:
+The purpose of Audio Transcriber/Recorder is to record large audio streams to a hard disk and then to split that file into smaller samples suitable for burning to cdr media and to burn a cdr, cdrw.
+An audio source connected to your sound card(/dev/dsp) supplies an audio stream that is recorded to your harddrive. This audio source could be a radio, tape player, microphone or whatever. This large sample can then be  broken down into smaller samples in a suitable format to be burned onto recordable cd media. I want a minimum of effort on my part to do all of this. The basic functionality is:
+  Record an audio stream to a harddisk.
+  Split a large audio file on the harddisk into small audio files.
+  Record audio file(s) onto cdr or cdrw disk
+  Maximum configurability if wanted, but defaults are correct 99.99 percent of the time.
+Audio Transcriber/Recorder is basically a frontend to SOX, CDRECORD, CDDA2WAV. It implements only a subset of these packages functionality in it's interface. You may use more of the functionality of these packages from within this program by editing their "control strings".
+The gui uses a tabbed/notebook style to keep the interface as clean as possible. Bubble help pops up to clarify the interface where needed when the mouse hoovers over a control.

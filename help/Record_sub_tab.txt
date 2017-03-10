@@ -1,0 +1,8 @@
+RECORD tab
+The record tab has controls for recording a sample to the harddisk or playing an existing master sample. Also there are controls to mark your trims as the recording is being done enabling the creation of trims lists. Pressing AUTOMAGICALY TRIM trims the original sample and remanes it with .BAK appended.
+The Record tab has controls to:
+- Record the incomming audio stream to a harddrive.
+- Play an existing master sample. For playing a master sample there is also a seek field so that you can start playing a given number of seconds into the master sample. Seeking into a sample aides in building or editing a trims list. 
+- Work with an existing trims list, editing it or adding to it.
+
+Once a stream is being recorded or played the trim buttons become activated. The trim buttons allow you to build a list of trim start==length pairs that you can  use to auto-magicaly trim out samples when you are done recording by pressing  the "Auto-Magicaly Trim" button. When you automagicaly trim a recording the new samples are named as the original recording with 0n appended (i.e. testa01.cdr, testa02.cdr .... testa09.cdr, testa110.cdr). Under this scheme you can mark your  trim samples as you record the original. Just press the Trim Start button to start the trim and press the Set Length button to set the trim length. When the Set Length button is pressed the count list will be updated. Then when you finish recording press the auto-magicaly trim button and youre done, the new samples will be added to the directory specified in the control string and the original sample will be renamed with .BAK appended to the name.

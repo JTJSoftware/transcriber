@@ -1,0 +1,6 @@
+Help Menu
+The help menu has four options:
+Help for context : will display the help dialog for the currently focused tab.
+About : will display the 'Splash screen'.
+Balloon Help ON : will turn on the popup help balloons.
+Balloon Help OFF : will turn off the popup help balloons.

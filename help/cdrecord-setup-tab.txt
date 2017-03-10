@@ -1,0 +1,2 @@
+CDRecord Setup tab
+The cdrecord setup tab has fields to specify the basic parameters for your cd burner.

@@ -1,0 +1,6 @@
+File Menu
+The File Menu has four options:
+Timer Record : Pops up a Timer Record dialog. You May open any nuber of Timers. The Timer Dialog will start/stop a proccess at a given time.
+Save Defaults : Saves the current state of the program settings. You set up the program the way you want and choose this menu option. When you start the recorder.pl this file, ./defaults.txt, is read and any values are copied and set in the program.
+Restore Defaults : Restores the program settings to these predetermined values.
+Exit : Quits the program. Closes all windows accociated with the program. Any proccesses started from the timer dialogs will remain running! BEWARE! You should Close any Timer dialogs before exiting Audio Transcriber.

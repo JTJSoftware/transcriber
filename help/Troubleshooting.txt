@@ -1,0 +1,7 @@
+Troubleshooting FAQ
+
+Q: When I playback something I record all I get is static.
+A: This happens with some soundcards(drivers). You need to make sure the input volume is not too high also in the mixer software you may need to disable the microphone and other inputs that are not needed. On my FC4 box I have to disable input from mic, cd and set the 'capture' volume as well as line-in volume.
+
+Q: Does Transcriber work on windows?
+A: I have only tested on linux. In theory it should/could since sox and perl work on windows. Activestate perl includes the tk toolkit.

@@ -1,0 +1,2 @@
+This is the help file for the Sox Setup tab.
+The Sox Setup tab contains fields for entering program wide defaults for sound recording. In this tab you set the Save Name, Save Path, sampling rate and Record format. The fields in this tab are filled in with default values when the program is started. Also these values are used to construct the recording control string and may be edited in the tabs where control string is shown.

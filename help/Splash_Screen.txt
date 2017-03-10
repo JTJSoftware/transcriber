@@ -1,0 +1,6 @@
+AUDIO TRANSCRIBER/RECORDER version 0.9.3
+Audio Transcriber/Recorder is a perl/Tk program designed to transfer audio tapes and lp's to cd's. The target platform is gnu/linux with X windows and has not been tested on other systems.
+This program is distributed under the terms of the GNU PUBLIC LICENSE.
+Copyright (c)2002, (c)2006 Jim Massey. All rights reserved. This program is free software; You can use it or modify it or redistribute it under the same terms as Perl itself.
+This Splash Screen is part of the context sensitive help system for perl/Tk - help_me.pm
+ENJOY!

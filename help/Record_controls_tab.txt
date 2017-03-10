@@ -1,0 +1,5 @@
+RECORDING CONTROLS TAB
+The Recording Controls tab contains three sub tabs Record, Trim/Play Sample and Copy CD.
+The Record tab has controls to record a sample and to mark your trims as you record. 
+Trim/Play Sample tab has controls to listen to an original sample and to break trims out.
+The Copy CD tab has controls to copy a cd to hard disk for burning copy to cdr(w).

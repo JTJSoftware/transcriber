@@ -1,0 +1,9 @@
+  Requirements:
+1.5gig harddisk space. A typical cd takes 650 meg of data. If you record a 60 minute cassette tape, or radio broadcast, or whatever to your harddrive and then want to split it into individual tracks, you will need alot of hd space.
+A directory named /cdimage. Well this is not really a must but it's the default, so please make this directory some place in your directorytree that has 1.5gig of space. I prefer a dedicated partition.
+Perl - with the Tk8 and Tk-Month packages. You'll probably need to go to www.cpan.org to get and install the Tk8 and Tk-Month packages or use MCPAN.
+SOX - sound tools. Comes with most popular linux distros. Please use the SOX-12.17.1-t.tar that is distributed with this software because the trim functions in earlier versions of sox do not work correctly. SOX can be obtained at http://www.sourceforge.net. I have not tested other versions of SOX except the version supplied with this software.
+CDrecord. Comes with most linux distros. CDrecord con be obtained at http://www.freshmeat.net
+CDDA2WAV. Comes with most linux distros as a part of the cdrecord package. Cdrecord can be obtained at http://www.freshmeat.net
+GNU/Linux. Of course! Is there any other usable OS? Also Xwindows and the window manager of your choice.
+Sox, Cdrecord, cdda2wav must be in your path (i.e. in an xterm you can type sox or cdrecord or cdda2wav to invoke the respective program). You must have the propper permissions set to use the various programs and files used by Audio Transcriber.
