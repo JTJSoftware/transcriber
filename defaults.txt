@@ -1,0 +1,11 @@
+PopHelp=yes
+DevBlank=fast
+CopyTracks=B
+RecRate=44100
+SaveName=track
+CopyChannels=s
+RecFormat=cdr
+DevSpeed=24
+RecLength=Recording time : 4347 sec
+SavePath=/home/jim/transcriber/cdimage
+DevID=/dev/cdrom
